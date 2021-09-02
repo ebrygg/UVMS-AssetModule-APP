@@ -29,7 +29,7 @@ import javax.ws.rs.sse.SseEventSink;
 @RequiresFeature(UnionVMSFeature.viewVesselsAndMobileTerminals)
 public class SSEResource {
 
-    private final static Logger LOG = LoggerFactory.getLogger(SSEResource.class);
+    private static final Logger LOG = LoggerFactory.getLogger(SSEResource.class);
 
     private Sse sse;
     private OutboundSseEvent.Builder eventBuilder;

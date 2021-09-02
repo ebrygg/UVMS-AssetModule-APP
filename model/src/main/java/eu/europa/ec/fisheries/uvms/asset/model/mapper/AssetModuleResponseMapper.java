@@ -27,7 +27,7 @@ import java.util.List;
 
 public class AssetModuleResponseMapper {
 
-    private final static Logger LOG = LoggerFactory.getLogger(AssetModuleResponseMapper.class);
+    private static final Logger LOG = LoggerFactory.getLogger(AssetModuleResponseMapper.class);
 
     private static void validateResponse(TextMessage response, String correlationId) throws JMSException {
 

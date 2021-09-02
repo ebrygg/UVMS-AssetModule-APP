@@ -1,7 +1,6 @@
 package eu.europa.ec.fisheries.uvms.asset.bean;
 
 import java.time.Instant;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
@@ -191,7 +190,7 @@ public class AssetFilterServiceBean{
     			 assetFilterValue.setAssetFilterQuery(assetFilterQuery);
     			 assetFilterValue = assetFilterDao.create(assetFilterValue);
     		 }
-    	 };
+    	 }
     	 assetFilter.setOwner(username);
     	 assetFilter.setUpdatedBy(username);
     	 assetFilter.setUpdateTime(Instant.now());
