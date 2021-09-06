@@ -23,10 +23,9 @@ import org.slf4j.LoggerFactory;
 
 import javax.jms.JMSException;
 import javax.jms.TextMessage;
-import java.util.List;
 
 public class MobileTerminalModuleResponseMapper {
-    final static Logger LOG = LoggerFactory.getLogger(MobileTerminalModuleResponseMapper.class);
+    static final Logger LOG = LoggerFactory.getLogger(MobileTerminalModuleResponseMapper.class);
 
     private static void validateResponse(TextMessage response, String correlationId) throws JMSException {
 
