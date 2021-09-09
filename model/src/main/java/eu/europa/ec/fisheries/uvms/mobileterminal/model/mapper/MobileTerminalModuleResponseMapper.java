@@ -23,6 +23,7 @@ import org.slf4j.LoggerFactory;
 
 import javax.jms.JMSException;
 import javax.jms.TextMessage;
+import java.util.List;
 
 public class MobileTerminalModuleResponseMapper {
     static final Logger LOG = LoggerFactory.getLogger(MobileTerminalModuleResponseMapper.class);

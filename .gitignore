@@ -3,5 +3,6 @@ logging.properties
 *.iml
 .idea/
 /module/src/main/webapp/apidocs
+.DS_Store
 
 model/pom.xml.rej
