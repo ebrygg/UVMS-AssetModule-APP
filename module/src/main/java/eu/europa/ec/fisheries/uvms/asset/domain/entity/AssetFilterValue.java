@@ -24,12 +24,12 @@ import static eu.europa.ec.fisheries.uvms.asset.domain.entity.AssetFilterValue.A
 
 @Entity
 @Table(name = "assetfiltervalue") // get index?
-@NamedQueries({
-		@NamedQuery(name=ASSETFILTER_VALUE_FIND_ALL, query="SELECT a FROM AssetFilterValue a"),
-		@NamedQuery(name=ASSETFILTER_VALUE_GETBYID, query="SELECT a FROM AssetFilterValue a where a.id = :id"),
-		@NamedQuery(name=ASSETFILTER_VALUE_CLEAR, query="DELETE  FROM AssetFilterValue a where a.assetFilterQuery = :assetFilterQuery"),
-		@NamedQuery(name=ASSETFILTER_RETRIEVE_VALUES_FOR_QUERY, query="SELECT a FROM AssetFilterValue a where a.assetFilterQuery = :assetFilterQuery"),
-})
+
+		@NamedQuery(name=ASSETFILTER_VALUE_FIND_ALL, query="SELECT a FROM AssetFilterValue a")
+		@NamedQuery(name=ASSETFILTER_VALUE_GETBYID, query="SELECT a FROM AssetFilterValue a where a.id = :id")
+		@NamedQuery(name=ASSETFILTER_VALUE_CLEAR, query="DELETE  FROM AssetFilterValue a where a.assetFilterQuery = :assetFilterQuery")
+		@NamedQuery(name=ASSETFILTER_RETRIEVE_VALUES_FOR_QUERY, query="SELECT a FROM AssetFilterValue a where a.assetFilterQuery = :assetFilterQuery")
+
 public class AssetFilterValue implements Serializable{
 
 	public static final String ASSETFILTER_VALUE_FIND_ALL ="assetfiltervalue.findAll";
