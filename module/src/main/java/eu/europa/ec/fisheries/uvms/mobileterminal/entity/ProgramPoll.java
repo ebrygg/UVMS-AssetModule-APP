@@ -8,13 +8,14 @@ import java.util.Objects;
 
 @Entity
 @Table(name = "poll_program")
-@NamedQueries({
-        @NamedQuery(name = ProgramPoll.PROGRAM_FIND_ALL, query = "SELECT p FROM ProgramPoll p"),
-        @NamedQuery(name = ProgramPoll.PROGRAM_FIND_BY_ID, query = "SELECT p FROM ProgramPoll p WHERE p.id = :id"),
+
+        @NamedQuery(name = ProgramPoll.PROGRAM_FIND_ALL, query = "SELECT p FROM ProgramPoll p")
+        @NamedQuery(name = ProgramPoll.PROGRAM_FIND_BY_ID, query = "SELECT p FROM ProgramPoll p WHERE p.id = :id")
         @NamedQuery(name = ProgramPoll.PROGRAM_FIND_ALIVE, query = "SELECT p FROM ProgramPoll  p WHERE p.stopDate > :currentDate " +
-                "AND p.pollState <> eu.europa.ec.fisheries.schema.mobileterminal.polltypes.v1.ProgramPollStatus.ARCHIVED"),
+                "AND p.pollState <> eu.europa.ec.fisheries.schema.mobileterminal.polltypes.v1.ProgramPollStatus.ARCHIVED")
         @NamedQuery(name = ProgramPoll.PROGRAM_FIND_RUNNING_AND_STARTED,
-                query = "SELECT p FROM ProgramPoll  p WHERE p.startDate < :currentDate AND p.pollState = eu.europa.ec.fisheries.schema.mobileterminal.polltypes.v1.ProgramPollStatus.STARTED") })
+                query = "SELECT p FROM ProgramPoll  p WHERE p.startDate < :currentDate AND p.pollState = eu.europa.ec.fisheries.schema.mobileterminal.polltypes.v1.ProgramPollStatus.STARTED")
+
 public class ProgramPoll extends PollBase {
 
     public static final String PROGRAM_FIND_ALL = "PollProgram.findAll";
