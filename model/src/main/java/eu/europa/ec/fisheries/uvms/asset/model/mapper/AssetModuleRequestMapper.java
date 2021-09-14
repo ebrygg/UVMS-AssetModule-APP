@@ -23,8 +23,6 @@ import java.util.Date;
 
 public class AssetModuleRequestMapper {
 
-    private final static Logger LOG = LoggerFactory.getLogger(AssetModuleRequestMapper.class);
-
     public static String createGetAssetModuleRequest(String value, AssetIdType type) throws AssetException {
         GetAssetModuleRequest request = new GetAssetModuleRequest();
         request.setMethod(AssetModuleMethod.GET_ASSET);
@@ -32,7 +30,7 @@ public class AssetModuleRequestMapper {
         return JAXBMarshaller.marshallJaxBObjectToString(request);
     }
 
-    private static AssetId createAssetId(String value, AssetIdType type) throws AssetException {
+    private static AssetId createAssetId(String value, AssetIdType type) {
     	if(value == null) {
     		throw new NullPointerException("Id value is null");
     	}
