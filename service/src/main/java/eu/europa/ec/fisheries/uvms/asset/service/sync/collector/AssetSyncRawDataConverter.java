@@ -200,7 +200,13 @@ public class AssetSyncRawDataConverter {
                 emailCommunicationTypes.stream().findFirst()
                         .ifPresent(e->assetRawHistory.setOwnerEmailAddress(e.getEmailAddress()));
                 universalCommunication.stream().findFirst()
-                        .ifPresent(p->assetRawHistory.setOwnerPhoneNumber(p.getPhoneNumber()));
+                        .ifPresent(p-> {
+                            String phoneNumber = p.getPhoneNumber();
+                            if (phoneNumber.length() > 20) {
+                                phoneNumber = phoneNumber.substring(0,20);
+                            }
+                            assetRawHistory.setOwnerPhoneNumber(phoneNumber);
+                        });
             } else if (FluxContactRoleType.AGENT.equals(fluxContactRoleType) ||
                     FluxContactRoleType.OPERATOR.equals(fluxContactRoleType)) {
                 if (Optional.ofNullable(contactParty.getName()).isPresent()) {
@@ -213,7 +219,13 @@ public class AssetSyncRawDataConverter {
                 emailCommunicationTypes.stream().findFirst()
                         .ifPresent(e->assetRawHistory.setAgentEmailAddress(e.getEmailAddress()));
                 universalCommunication.stream().findFirst()
-                        .ifPresent(p->assetRawHistory.setAgentPhoneNumber(p.getPhoneNumber()));
+                        .ifPresent(p->{
+                            String phoneNumber = p.getPhoneNumber();
+                            if (phoneNumber.length() > 20) {
+                                phoneNumber = phoneNumber.substring(0,20);
+                            }
+                            assetRawHistory.setAgentPhoneNumber(phoneNumber);
+                        });
             }
         });
     }
