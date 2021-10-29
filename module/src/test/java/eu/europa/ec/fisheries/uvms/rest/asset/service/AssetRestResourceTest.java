@@ -250,7 +250,7 @@ public class AssetRestResourceTest extends AbstractAssetRestTest {
 
         Asset fetchedAsset = jsonb.fromJson(fetchedAssetString, Asset.class);
         assertNotNull(fetchedAsset);
-        assertTrue(fetchedAsset.getMobileTerminalUUIDList().size() == 1);
+        assertEquals(1, fetchedAsset.getMobileTerminalUUIDList().size());
         assertEquals(createdMT.getId(), UUID.fromString(fetchedAsset.getMobileTerminalUUIDList().get(0)));
 
     }
@@ -307,7 +307,7 @@ public class AssetRestResourceTest extends AbstractAssetRestTest {
 
         Asset fetchedAsset = jsonb.fromJson(fetchedAssetString, Asset.class);
         assertNotNull(fetchedAsset);
-        assertTrue(fetchedAsset.getMobileTerminalUUIDList().size() == 1);
+        assertEquals(1, fetchedAsset.getMobileTerminalUUIDList().size());
         assertEquals(createdMT.getId(), UUID.fromString(fetchedAsset.getMobileTerminalUUIDList().get(0)));
     }
 
@@ -378,7 +378,7 @@ public class AssetRestResourceTest extends AbstractAssetRestTest {
         fetchedAsset = jsonb.fromJson(fetchedAssetString, Asset.class);
 
         assertNotNull(fetchedAsset);
-        assertTrue(fetchedAsset.getMobileTerminalUUIDList().size() == 1);
+        assertEquals(1, fetchedAsset.getMobileTerminalUUIDList().size());
         assertEquals(createdMT.getId(), UUID.fromString(fetchedAsset.getMobileTerminalUUIDList().get(0)));
         assertEquals(updatedAsset.getOwnerName(), fetchedAsset.getOwnerName());
     }

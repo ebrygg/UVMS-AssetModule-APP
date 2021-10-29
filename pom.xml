@@ -29,6 +29,7 @@
         <exchange.model.version>5.3.18-UVMS</exchange.model.version>
         <project.scm.id>github</project.scm.id>
         <installAtEnd>false</installAtEnd>
+
     </properties>
 
 	<dependencies>
@@ -110,5 +111,4 @@
         <module>module</module>
         <module>client</module>
     </modules>
-
 </project>
